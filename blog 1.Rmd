@@ -1,0 +1,37 @@
+---
+title: "What is p‑value, and Why Do So Many Researchers Misinterpret It?"
+author: "Yuchen Chen"
+date: "2026-10-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# What is p‑value, and Why Do So Many Researchers Misinterpret It?
+
+### Introduction
+The p-value is one of the statistical tools that are mostly often used in the field of economics and data science, but is also often misunderstood by practitioners. This is not only a textbook exercise, according to the reasearch about the students at school and reasearchers, people shows a widespread misunderstanding of the means of p-value. A misunderstanding on p-value would brings real life effects, such as being too confident about the conclusion of a research, unreproducible research and having misleading real life conclusion. It is just this practical risk makes this topic suitable for writinga blog post about the p-value. This blog would explain the true definition of the p-value, explaining why our intuition may be misleading, and what conclusions can we gain from p-value in fact.
+
+Note: This blog uses hypothetical examples for illustration; no external raw dataset is used.
+
+### What exactly does a p-value tell us?
+A p-value means: holding the null hypothesis true, the probability of observing a result that is the same or more extreme compare with our sample. The null hypothesis is the base hypothesis that we set, usually represents no causal effect.
+
+For example, we want to evaluate whether a job training exercise can increase the workers' wages. The null hypothesis is that the training have no effect on wages. If the p-value is calculated and get 0.03, it means that if the training is really useless, then we only have 3% probability to observe a wage gap that is large or even larger in the sample.
+
+The crucial point is thet calclulation of p-value is based on the null hypothesis is true, so it cannot tell us the probability of the null hypothesis itself. It cannot calculate whether the research finding is true or coincident, only quantifies how surprising our data would be under no-effect.
+
+### A coin-flipping thought experiment
+Suppose we doubt a coin is weighted. The null hypothesis is the coin is fair, the probability of both sides are 50%. We flipped 10 times, and got 9 heads. Then the p-value is the probability of getting 9 or 10 heads after flipping a fair coin for 10 times, which would be small.
+
+A small p-value onlly tells that if the coin is fair, this result is surprising. But it cannot directly tell us how likely this coin is weighted. The surprising under null hypothesis is not equal to our alternative hyphthesis is correct.
+
+### Why human intuition gets p-values backwards
+People would like to know intuitively: after getting the current data, how likely the hypothesis of my research is true. But p-value answers the conditional probability of the reversed side: given the null hypothesis is correct, the probability of getting this data. These two are totally different conditional probability, which cause the most misleading parts.
+
+The research usually consider a p-value smaller than 0.05 as statistically significant, but it is not equivalent with large effect size, economic importance, or the result is replicable. As long as the sample size is large, even tiny differences would get a small p-value. Onlying looking p-value will be misleading.
+
+### Key takeaways
+The p-value meausures how abonormal the data we observed without real effect. It is not equivalent to the probability the result is true or not. When reading empirical results, we cannot only rely on p-value, but also need to combine effect size and confidence interval to judge a conclusion is practical or not in real world. When you see a result that is statistical significant, remember to ask yourself the size of the actual effect, and whether the result is replicable with new samples.
